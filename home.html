@@ -1,0 +1,601 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Online Store</title>
+    <!-- font awsome CDN file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- custom CSS file link -->
+    <link rel="stylesheet" href="index.css">
+  <style>
+ 
+.maincontent {
+  width: 100vw;
+  height: 80vh;
+  margin-top: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.maincontent .middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 40vw;
+  height: auto;
+}
+
+.maincontent .middle .slogan {
+  height: auto;
+  width: 100%;
+  text-align: center;
+}
+
+.maincontent .middle .slogan p {
+  font-size: 35px;
+  -webkit-text-fill-color: black;
+  -webkit-text-stroke: 2px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.maincontent .middle .searchbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  border: 1px solid #00340b;
+  background-color: pink;
+}
+
+.maincontent .middle .searchbar .search {
+  height: 100%;
+  width: 100%;
+  border-color: transparent;
+  outline: none;
+  background-color: transparent;
+  font-size: 20px;
+  padding-left: 15px;
+}
+
+.maincontent .middle .searchbar i {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: #00340b;
+  color: pink;
+  font-size: 25px;
+}
+.images{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:100%;
+  width:100%;
+  position: relative;
+  top:-450px;
+}
+.images .decor{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.images .decor .img1{
+  height:400px;
+  width:25%;
+ 
+  position: absolute;
+  left:3%;
+  top:7%;
+}
+.images .decor .img2{
+  height:400px;
+  width:25%;
+  
+  position: absolute;
+  top:7%;
+  right:1%;
+}
+.images .decor .img3{
+  height:450px;
+  width:20%;
+  position: absolute;
+  top:550px;
+  left:10%;
+}
+.images .decor .img4{
+  height:450px;
+  width:20%;
+  position: absolute;
+  top:550px;
+  right:8%;
+}
+.btn6 {
+    position: relative;
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: pink;
+    background: transparent;
+    border: 4px solid transparent;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+}
+.btn6::before, 
+.btn6::after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 0;
+    background: pink;
+    transition: width 0.4s cubic-bezier(.5, .24, 0, 1);
+}
+
+.btn6::before {
+    left: 0;
+    bottom: 0;
+}
+
+.btn6::after {
+    right: 0;
+    top: 0;
+}
+
+.btn6:hover::before, 
+.btn6:hover::after {
+    width: 100%;
+}
+
+.btn6:hover {
+    border-left: 4px solid brown;
+    border-right: 4px solid brown;
+    border-top: 4px solid brown;
+    border-bottom: 4px solid brown;
+    background: rgba(96, 152, 255, 0.1);
+    color: pink;
+}
+.tag{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  flex-direction: column;
+  font-size: 25px;
+  font-weight: 1000;
+  text-transform: uppercase;
+
+}
+.toprating {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+margin-top: 0px;
+  gap: 30px;  /* Increased gap to 100px */
+}
+
+.toprating .editorchoice {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start; /* Ensure products are aligned from the start */
+  width: 100%;
+  flex-wrap: wrap;
+  margin-left: 60px;
+  margin-right: 10px;
+  gap:27px;
+}
+
+.toprating .editorchoice .picks {
+  flex-basis: 22%;  /* Slightly reduce width of items to ensure more room for gap */
+  height: auto;
+  background-color: white;
+  border-radius: 15px;
+  box-sizing: border-box;
+  padding: 10px;
+  transition: all 0.3s;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+    .toprating .editorchoice .picks:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .toprating .editorchoice .picks .edimg {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+     
+      background-color:white;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .toprating .editorchoice .picks .edimg img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .toprating .editorchoice .picks .prodet {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 10px;
+    }
+
+    .toprating .editorchoice .picks .prodet h3 {
+      font-size: 14px;
+      color: black;
+      margin: 0;
+      font-weight: 500;
+    }
+
+    .toprating .editorchoice .picks .rating {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 5px;
+      margin: 10px 0;
+    }
+
+    .rating i {
+      color: gold;
+    }
+
+    .toprating .editorchoice .picks .fav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .toprating .editorchoice .picks .fav div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: pink;
+      padding: 8px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .toprating .editorchoice .picks .fav div:hover {
+      background-color: white;
+      border: 1px solid pink;
+    }
+
+    .tag .choice {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .tag .choice .button {
+      padding: 12px 24px;
+      background-color: #00340b;
+      color: white;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .tag .choice .button:hover {
+      background-color: #005d1f;
+    }
+    @media (max-width: 768px) {
+  /* Adjust main content for mobile view */
+  .maincontent {
+    margin-top: 20px; /* Make space for the fixed navbar */
+    height: auto; /* Ensure content height is dynamic */
+  }
+
+  /* Adjust the slogan position */
+  .maincontent .middle .slogan {
+    margin-top: 80px; /* Push the slogan down a little */
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .maincontent .middle .slogan p {
+    font-size: 24px; /* Adjust font size for better readability on mobile */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    -webkit-text-fill-color: black;
+    -webkit-text-stroke: 1px;
+  }
+
+  /* Make search bar responsive */
+  .maincontent .middle .searchbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    height: 45px;
+    margin-top: 10px;
+    border-radius: 25px;
+  }
+
+  .maincontent .middle .searchbar .search {
+   
+    display: none;
+    
+  }
+
+  /* Adjust image layout to stack vertically and make images show one by one */
+  .images .decor {
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Add space between the images */
+  }
+
+  .images .decor .img1,
+  .images .decor .img2 {
+    width: 80%;  /* Set the image width to 80% on mobile */
+    height: auto;  /* Maintain the aspect ratio */
+    position: relative;  /* Adjust position for mobile */
+    top: 0;  /* Remove any top margin */
+  }
+
+  /* Optional: Set the images to have a slight top margin to create spacing */
+  .images .decor .img1 {
+    margin-top: 450px;
+  }
+
+  .images .decor .img2 {
+    margin-top: 20px;
+
+  }
+  .tag{
+    margin-top: 2px;
+  }
+}
+
+
+</style>
+</head>
+<body>
+    <header class="header">
+    <a href="#" class="logo"><i class="fas fa-shopping-basket"></i>Ruronix</a>
+    <nav class="navbar">
+      
+              <a href="home.html">home</a>  
+          
+              <a href="list.html">products</a>  
+              <a href="category.html">categories</a>  
+              <a href="reviews.html">review</a>  
+              <a href="stories.html">blogs</a>  
+              <a href="#features">Features</a>
+        
+    </nav>
+
+    <div class="icons">
+      <div class="fas fa-bars" id="menu-btn"></div>
+      <div class="fas fa-search" id="search-btn"></div>
+      <div class="fas fa-shopping-cart" id="cart-btn"></div>
+      <div class="fas fa-user" id="login-btn"></div>
+  </div>
+
+    <form action="" class="search-form">
+        <input type="search" id="search-box" placeholder="search here...">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+
+    <div class="shopping-cart">
+        <div class="box">
+            <i class="fas fa-trash"></i>
+            <img src="photos/cart-img-1.png" alt="">
+            <div class="content">
+                <h3>Rolling Toy</h3>
+                <span class="price">$100/-</span>
+                <span class="quantity">qty : 1</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-trash"></i>
+            <img src="photos/cart-img-2.png" alt="">
+            <div class="content">
+                <h3>Leather Bag</h3>
+                <span class="price">$200/-</span>
+                <span class="quantity">qty : 1</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-trash"></i>
+            <img src="photos/cart-img-3.png" alt="">
+            <div class="content">
+                <h3>Wooden Chair</h3>
+                <span class="price">$100/-</span>
+                <span class="quantity">qty : 1</span>
+            </div>
+        </div>
+        <div class="total">total : $500/-</div>
+        <a href="payment.html" class="btn">checkout</a>
+    </div>
+
+    <form action="" class="login-form">
+        <h3>login now</h3>
+        <input type="email" placeholder="your email" class="box">
+        <input type="password" placeholder="your password" class="box">
+        <p>forget your password <a href="#">click here</a></p>
+        <p>don't have an account <a href="#">create now</a></p>
+        <input type="submit" value="login now" class="btn">
+    </form>
+
+
+
+
+
+</header>
+<!-- custom JS file link -->
+    <script src="index.js"></script>
+  <div class="maincontent">
+    <div class="middle"><div class="slogan">
+      <div class="searchbar"><input type="text" class="search" placeholder="search"><i class="bx bx-search" ></i></div>
+      <p style="font-family: 'Times New Roman', Times, serif;">Every Piece Tells a Story – Directly from the Maker’s Hands.</p></div>
+    </div>
+  </div>
+  <div class="images">
+    <div class="decor">
+      <img class="img1 btn6" src="baskets.jpeg" alt="basket">
+      <img class="img2 btn6" src="hangings.jpeg" alt="basket">
+    </div>
+  </div>
+  <div class="tag">
+    <div class="choice">
+  </div>
+    <div class="toprating">
+      <div class="editorchoice"></div> <!-- Products will be dynamically inserted here -->
+    </div>
+  </div>
+  <script>
+    // Sample data for products (including rating and product info)
+    const products = [
+      { id: 1, name: 'Pot 1', price: '$20', image: 'img1.png', rating: 4,width: '150px', height: '150px' },
+      { id: 2, name: 'Peacock 1', price: '$30', image: 'image-removebg-preview.png', rating: 5, width: '150px', height: '150px' },
+      { id: 3, name: 'Blue Pottery 1', price: '$25', image: 'image-removebg-preview (1).png', rating: 3, width: '150px', height: '150px' },
+      { id: 4, name: 'Candle Holder 1', price: '$15', image: 'image-removebg-preview (2).png', rating: 4,width: '185px', height: '150px' },
+      { id: 5, name: 'Pot 1', price: '$20', image: 'image-removebg-preview (1.4).png', rating: 4,width: '150px', height: '150px' },
+      { id: 6, name: 'Peacock 1', price: '$30', image: 'image-removebg-preview (1.1).png', rating: 5, width: '150px', height: '150px' },
+      { id: 7, name: 'Blue Pottery 1', price: '$25', image: 'image-removebg-preview (1.2).png', rating: 3, width: '150px', height: '150px' },
+      { id: 8, name: 'Candle Holder 1', price: '$15', image: 'image-removebg-preview (1.3).png', rating: 4,width: '185px', height: '150px' },
+      { id: 9, name: 'Pot 1', price: '$20', image: 'img1.png', rating: 4,width: '150px', height: '150px' },
+      { id: 10, name: 'Peacock 1', price: '$30', image: 'image-removebg-preview.png', rating: 5, width: '150px', height: '150px' },
+      { id: 11, name: 'Blue Pottery 1', price: '$25', image: 'image-removebg-preview (1).png', rating: 3, width: '150px', height: '150px' },
+      { id: 12, name: 'Candle Holder 1', price: '$15', image: 'image-removebg-preview (2).png', rating: 4,width: '185px', height: '150px' }
+    ];
+
+    // Function to create and append products to the page
+    function createProductElements() {
+      const container = document.querySelector('.editorchoice'); // Select where products should go
+
+      // Loop through the products and create HTML for each one
+      products.forEach((product) => {
+        const productDiv = document.createElement('div');
+        productDiv.classList.add('picks');
+
+        // Image Section
+        const edimgDiv = document.createElement('div');
+        edimgDiv.classList.add('edimg');
+        const imgElement = document.createElement('img');
+        imgElement.src = product.image;
+        imgElement.alt = product.name;
+
+        // Set the width and height dynamically if defined in the product object
+        if (product.width && product.height) {
+          imgElement.style.width = product.width;
+          imgElement.style.height = product.height;
+        }
+
+        edimgDiv.appendChild(imgElement);
+
+        // Product Details Section
+        const prodetDiv = document.createElement('div');
+        prodetDiv.classList.add('prodet');
+        const productName = document.createElement('h3');
+        productName.textContent = product.name;
+        const productPrice = document.createElement('h3');
+        productPrice.textContent = product.price;
+        prodetDiv.appendChild(productName);
+        prodetDiv.appendChild(productPrice);
+
+        // Rating Section
+        const ratingDiv = document.createElement('div');
+        ratingDiv.classList.add('rating');
+        for (let i = 1; i <= 5; i++) {
+          const starIcon = document.createElement('i');
+          starIcon.classList.add('fas', 'fa-star');
+          if (i > product.rating) {
+            starIcon.classList.add('far');
+          }
+          ratingDiv.appendChild(starIcon);
+        }
+
+        // Wishlist and Cart Section
+        const favDiv = document.createElement('div');
+        favDiv.classList.add('fav');
+        
+        const cartDiv = document.createElement('div');
+        cartDiv.classList.add('cart');
+        cartDiv.innerHTML = '<i class="fas fa-shopping-cart"></i>';
+        cartDiv.addEventListener('click', () => addToCart(product.id));
+
+        const heartDiv = document.createElement('div');
+        heartDiv.classList.add('heart');
+        heartDiv.innerHTML = '<i class="fas fa-heart"></i>';
+        heartDiv.addEventListener('click', () => addToWishlist(product.id));
+
+        favDiv.appendChild(cartDiv);
+        favDiv.appendChild(heartDiv);
+
+        // Combine all sections into the product div
+        productDiv.appendChild(edimgDiv);
+        productDiv.appendChild(prodetDiv);
+        productDiv.appendChild(ratingDiv);
+        productDiv.appendChild(favDiv);
+
+        // Append to the main container
+        container.appendChild(productDiv);
+      });
+    }
+
+    // Cart and Wishlist Logic
+    const cart = [];
+    const wishlist = [];
+
+    function addToCart(productId) {
+      const product = products.find((p) => p.id === productId);
+      if (!cart.includes(product)) {
+        cart.push(product);
+        alert('Product added to cart!');
+      }
+    }
+
+    function addToWishlist(productId) {
+      const product = products.find((p) => p.id === productId);
+      if (!wishlist.includes(product)) {
+        wishlist.push(product);
+        alert('Product added to wishlist!');
+      }
+    }
+
+    // Initialize the product grid when the page loads
+    window.onload = () => {
+      createProductElements();
+    };
+</script>
+
+
+
+
+</body>
+</html>

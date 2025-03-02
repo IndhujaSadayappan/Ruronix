@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category</title>
+    <!-- font awsome CDN file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- custom CSS file link -->
+    <link rel="stylesheet" href="index.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", serif;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            flex-direction: column;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5%;
+            height: 100%;
+            width: 100%;
+            flex-wrap: wrap;
+            font-size: 20px;
+        }
+
+        .nav {
+            height: 15%;
+            border: 1px solid black;
+            width: 100%;
+        }
+
+        .search {
+            width: 40%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            overflow-y: scroll;
+            padding: 20px;
+        }
+
+        #search-list {
+            width: 100%;
+        }
+
+        #search-list li {
+            background: black;
+            color: white;
+            flex-grow: 1;
+            display: flex;
+            flex-basis: 150px;
+            height: 30%;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            font-size: 15px;
+        }
+
+        #search-list li:hover {
+            color: black;
+            background: transparent;
+        }
+
+        .search input {
+            height: 10%;
+            width: 90%;
+            text-align: center;
+            outline: none;
+            border-radius: 10px;
+            border: 1px solid black;
+            margin-bottom: 10px;
+        }
+
+        .cards {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            scroll-behavior: smooth;
+            position: relative;
+        }
+
+        .cards-item {
+            display: flex;
+            width: 48%;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .cards-item .card-text {
+            position: absolute;
+            bottom: 10%;
+            text-align: center;
+            width: 50%;
+            padding-top: 30%;
+            background: black;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            color: white;
+        }
+
+        .cards .cards-item img {
+            border-radius: 100px;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            z-index: 1;
+            margin-top: -50px;
+            align-self: center;
+        }
+
+        .content {
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+            overflow-y: scroll;
+          
+            padding: 20px;
+        }
+
+        .content .text {
+            font-weight: 800;
+            font-size: 25px;
+            text-align: center;
+            margin-top: 5%;
+            font-size: 20px;
+        }
+
+        .content .button ul {
+            display: flex;
+            list-style: none;
+            gap: 5%;
+            width: 100%;
+            height: 100%;
+            flex-wrap: wrap;
+            margin-top: 10%;
+            justify-content: center;
+        }
+
+        .content .button #category-list {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 5%;
+            font-size: 15px;
+        }
+
+        .content .button #category-list li {
+            background: black;
+            color: white;
+            flex-grow: 1;
+            margin: 3%;
+            display: flex;
+            flex-basis: 150px;
+            height: 30%;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+
+        }
+
+        .content .button ul li {
+            background: black;
+            color: white;
+            flex-grow: 1;
+            margin: 3%;
+            display: flex;
+            flex-basis: 150px;
+            height: 30%;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    /* Adjust container layout */
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    /* Adjust content section width */
+    .content {
+        width: 100%;
+        margin-bottom: 20px; /* Add space between content sections */
+    }
+
+    /* Adjust the category list items */
+    .content .button ul li {
+        width: 100%; /* Make the category items full width on mobile */
+        font-size: 14px;
+        padding: 12px;
+        text-align: center;
+    }
+
+    /* Adjust the text size for content */
+    .content .text {
+        font-size: 18px; /* Smaller font size for mobile */
+        text-align: center; /* Center the text */
+        margin-top: 10px;
+    }
+
+    /* Adjust search input field */
+    .search input {
+        width: 100%; /* Make the search bar take full width */
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* Adjust the card items for mobile */
+    .cards-item {
+        width: 100%; /* Cards take up full width */
+        margin-bottom: 15px; /* Space between cards */
+    }
+
+    .cards .cards-item img {
+        width: 80px;
+        height: 80px; /* Adjust image size */
+        margin-top: -40px;
+    }
+
+    /* Adjust card text */
+    .cards-item .card-text {
+        width: 100%; /* Make card text take full width */
+        font-size: 14px; /* Adjust text size */
+        padding: 10px;
+    }
+
+    /* Adjust buttons in the button list */
+    .content .button ul {
+        flex-direction: column;
+        gap: 15px; /* Increase space between buttons */
+    }
+
+    /* Hide shopping cart and login form on mobile */
+    .shopping-cart {
+        display: none; /* Hide shopping cart */
+    }
+
+    .login-form {
+        display: none; /* Hide login form */
+    }
+
+    /* Hide search form and show search icon */
+    .search-form {
+        display: none; /* Hide the search form */
+    }
+
+    /* Adjust icons and hide certain elements */
+    .icons {
+        display: block;
+        text-align: right;
+    }
+
+    /* Adjust the size of the icons on mobile */
+    .icons i {
+        font-size: 20px; /* Resize icons */
+    }
+
+    /* Optional: Adjust nav-bar display (if you don't need the navbar) */
+    .nav {
+        display: none; /* Hide the navbar */
+    }
+}
+
+        
+
+      
+    </style>
+</head>
+<!-- Header section start -->
+<header class="header">
+    <a href="#" class="logo"><i class="fas fa-shopping-basket"></i>Ruronix</a>
+    <nav class="navbar">
+      
+              <a href="home.html">home</a>  
+          
+              <a href="list.html">products</a>  
+              <a href="category.html">categories</a>  
+              <a href="#review">review</a>  
+              <a href="story.html">blogs</a>  
+              <a href="#features">features</a>  
+        
+    </nav>
+
+    <div class="icons">
+      <div class="fas fa-bars" id="menu-btn"></div>
+      <div class="fas fa-search" id="search-btn"></div>
+      <div class="fas fa-shopping-cart" id="cart-btn"></div>
+      <div class="fas fa-user" id="login-btn"></div>
+  </div>
+
+    <form action="" class="search-form">
+        <input type="search" id="search-box" placeholder="search here...">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+
+   
+
+    <form action="" class="login-form">
+        <h3>login now</h3>
+        <input type="email" placeholder="your email" class="box">
+        <input type="password" placeholder="your password" class="box">
+        <p>forget your password <a href="#">click here</a></p>
+        <p>don't have an account <a href="#">create now</a></p>
+        <input type="submit" value="login now" class="btn">
+    </form>
+
+
+
+
+
+</header>
+
+<!-- Header section end -->
+    
+
+
+
+<!-- custom JS file link -->
+    <script src="index.js"></script>
+<body>
+    <div class="nav"></div>
+
+    <div class="container">
+        <div class="content">
+            <div class="text">Category</div>
+            <div class="button">
+                <ul id="category">
+                    <li>Jewelry</li>
+                    <li>Clothing</li>
+                    <li>Home Decor</li>
+                    <li>Accessories</li>
+                    <li>Furniture</li>
+                    <li>Bath & Body</li>
+                    <li>Pottery</li>
+                    <li>Baby Products</li>
+                    <li>Stationery</li>
+                    <li>Art</li>
+                    <li>Leather Goods</li>
+                    <li>Food</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="search">
+            <input type="search" name="" id="search-input" placeholder="Search the Category.....!">
+            <ul id="search-list"></ul>
+        </div>
+
+        <div class="content">
+            <div class="text">Category List</div>
+            <div class="button">
+                <ul id="category-list">
+                    <center>Select any Category</center>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const categories = {
+            
+  "Jewelry": ["Necklaces", "Bracelets", "Earrings", "Rings"],
+  "Clothing": ["Scarves", "Sweaters", "Hats", "Socks"],
+  "Home Decor": ["Candles", "Wall Art", "Throw Pillows", "Rugs"],
+  "Accessories": ["Bags", "Belts", "Hair Accessories", "Wallets"],
+  "Furniture": ["Chairs", "Tables", "Shelves", "Stools"],
+  "Bath & Body": ["Soaps", "Bath Bombs", "Lip Balms", "Body Scrubs"],
+  "Pottery": ["Mugs", "Bowls", "Vases", "Plates"],
+  "Baby Products": ["Baby Blankets", "Baby Clothes", "Toys", "Diaper Bags"],
+  "Stationery": ["Notebooks", "Cards", "Journals", "Planners"],
+  "Art": ["Paintings", "Drawings", "Prints", "Sculptures"],
+  "Leather Goods": ["Wallets", "Bags", "Journals", "Keychains"],
+  "Food": ["Jams", "Candies", "Chocolates", "Baked Goods"]
+
+
+        };
+
+        const categoryItems = document.querySelectorAll('#category li');
+
+        categoryItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                const category = item.textContent;
+                disp(category);
+            });
+        });
+
+        function disp(category) {
+            const output = document.getElementById('category-list');
+            output.innerHTML = '';
+
+            if (categories[category]) {
+                const items = categories[category];
+                let lidata = '<ul>';
+                items.forEach(function(item) {
+                    lidata += `<li>${item}</li>`;
+                });
+                lidata += `</ul>`;
+                output.innerHTML = lidata;
+            } else {
+                output.innerHTML = `<p>No items available for ${category}.</p>`;
+            }
+        }
+
+       
+    </script>
+</body>
+</html>

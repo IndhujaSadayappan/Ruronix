@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+    <!-- font awsome CDN file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- custom CSS file link -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="payment.css">
+    <script src="payment.js"></script>
+    <!-- Include QR Code generation library -->
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+  <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',  // Set the default language of the page
+          layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL, // Horizontal layout
+          autoDisplay: false // Disable automatic display (can be toggled on demand)
+        }, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</head>
+<!-- Header section start -->
+<header class="header">
+    <a href="#" class="logo"><i class="fas fa-shopping-basket"></i>Gstore</a>
+    <nav class="navbar">
+              <a href="#home">home</a>  
+              <a href="#features">features</a>  
+              <a href="#products">products</a>  
+              <a href="#categories">categories</a>  
+              <a href="#review">review</a>  
+              <a href="#blogs">blogs</a>  
+
+    </nav>
+
+    <div class="icons">
+      <div class="fas fa-bars" id="menu-btn"></div>
+      <div class="fas fa-search" id="search-btn"></div>
+      <div class="fas fa-shopping-cart" id="cart-btn"></div>
+      <div class="fas fa-user" id="login-btn"></div>
+  </div>
+  <div id="google_translate_element"></div>
+    <form action="" class="search-form">
+        <input type="search" id="search-box" placeholder="search here...">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+
+    <div class="shopping-cart">
+        <div class="box">
+            <i class="fas fa-trash"></i>
+            <img src="photos/cart-img-1.png" alt="">
+            <div class="content">
+                <h3>watermelon</h3>
+                <span class="price">$4.99/-</span>
+                <span class="quantity">qty : 1</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-trash"></i>
+            <img src="photos/cart-img-2.png" alt="">
+            <div class="content">
+                <h3>onion</h3>
+                <span class="price">$4.99/-</span>
+                <span class="quantity">qty : 1</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-trash"></i>
+            <img src="photos/cart-img-3.png" alt="">
+            <div class="content">
+                <h3>chicken</h3>
+                <span class="price">$4.99/-</span>
+                <span class="quantity">qty : 1</span>
+            </div>
+        </div>
+        <div class="total">total : $19.69/-</div>
+        <a href="#" class="btn">checkout</a>
+    </div>
+
+    <form action="" class="login-form">
+        <h3>login now</h3>
+        <input type="email" placeholder="your email" class="box">
+        <input type="password" placeholder="your password" class="box">
+        <p>forget your password <a href="#">click here</a></p>
+        <p>don't have an account <a href="#">create now</a></p>
+        <input type="submit" value="login now" class="btn">
+    </form>
+</header>
+<!-- custom JS file link -->
+    <script src="index.js"></script>
+
+<div class="container">
+
+    <form action="#">
+
+        <div class="row">
+
+            <div class="col">
+                <h3 class="title">Billing Address</h3>
+
+                <div class="inputBox">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="inputBox">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" placeholder="Enter email address" required>
+                </div>
+
+                <div class="inputBox">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" placeholder="Enter address" required>
+                </div>
+
+                <div class="inputBox">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" placeholder="Enter city" required>
+                </div>
+
+                <div class="flex">
+
+                    <div class="inputBox">
+                        <label for="state">State:</label>
+                        <input type="text" id="state" placeholder="Enter state" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="zip">Zip Code:</label>
+                        <input type="number" id="zip" placeholder="123 456" required>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col">
+                <h3 class="title">Payment</h3>
+
+                <div class="inputBox">
+                    <label for="name">Card Accepted:</label>
+                    <img src="https://i.ibb.co/X38b5PF/card-img.png" alt="">
+                </div>
+
+                <div class="inputBox">
+                    <label for="cardName">Name On Card:</label>
+                    <input type="text" id="cardName" placeholder="Enter card name" required>
+                </div>
+
+                <div class="inputBox">
+                    <label for="cardNum">Credit Card Number:</label>
+                    <input type="text" id="cardNum" placeholder="1111-2222-3333-4444" maxlength="19" required>
+                </div>
+
+                <div class="inputBox">
+                    <label for="">Exp Month:</label>
+                    <select name="" id="">
+                        <option value="">Choose month</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                </div>
+
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <label for="">Exp Year:</label>
+                        <select name="" id="">
+                            <option value="">Choose Year</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                        </select>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="cvv">CVV</label>
+                        <input type="number" id="cvv" placeholder="1234" required>
+                    </div>
+                </div>
+                <div class="inputBox">
+                    <label for="qrPayment">Pay with QR Code:</label>
+                    <div id="qrcode" class="qrcode-container"></div>
+                    <button type="button" class="btn" id="generate-qr">Generate QR Code</button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <input type="submit" value="Proceed to Checkout" class="submit_btn">
+    </form>
+
+</div>

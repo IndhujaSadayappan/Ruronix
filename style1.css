@@ -1,0 +1,179 @@
+
+      
+      div .box1 {
+        background-color:white;
+        width: 12cm;
+        height: 6.0cm;
+        border: 1px solid darkgreen;
+        padding: 10px;
+        margin-top: 10px;
+        margin-left: 0px;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+        font-size: 15px;
+    }
+    div .box2 {
+        background-color:white;
+        width: 20cm;
+        height: 6.0cm;
+        border: 1px solid darkgreen;
+        padding: 10px;
+        margin-top: 10px;
+        margin-left: 2px;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+        font-size:15px;
+    }
+    
+    .form-group {
+        margin-bottom: 10px;
+    }
+    label {
+        display: block;
+        font-weight: bold;
+    }
+    input[type="text"] {
+        width: 95%;
+        padding: 5px;
+        margin-top: 5px;
+    }
+    #description {
+        height: 85px;
+    }
+    .container {
+    display: flex; 
+    gap: 10px; 
+    margin-left:250px;
+    margin-top: 70px;
+}
+.container3 {
+  display: flex; 
+  gap: 10px; 
+  margin-left:250px;
+  margin-top: 25px;
+}
+.h1{
+    margin-left:270px;
+}
+.dropzone {
+    width: 170px;
+    height: 150px;
+    border: 2px dashed #aaaaaa;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  #image-preview {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 350px;
+    max-height: 200px;
+  }
+  
+  input[type="file"] {
+    margin-top: 20px;
+    
+  }
+  #file-input {
+    display: none;
+  }
+  .container2 {
+    display: flex; 
+    gap: 5px;
+  
+    
+  }
+  .box3 {
+    background-color: white;  /* White background */
+    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    width: 10.5cm; 
+    height: 6.5cm;
+    padding-left: 15px; 
+    font-size: 15px;
+}
+
+h2 {
+    font-size: 16px; 
+    margin: 0;  
+    padding: 0; 
+    margin-top: 10px;
+    margin-bottom: 15px;  
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;  
+}
+
+.contents {
+    padding-left: 4px;
+}
+
+.contents label {
+  
+    margin-bottom: 3px; 
+}
+
+.contents input {
+    width: 85%;
+    padding-left: 3px;  
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.contents:last-child {
+    margin-right: 2px;  
+}
+.box4 {
+  background-color: white;  
+  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  width: 10.5cm;
+  height: 6.5cm;  
+  padding-left: 15px;
+  font-size: 15px;
+  
+}
+
+h2 {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;  /* Increased space between rows */
+}
+
+.contents1 {
+  width: 40%;  
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.contents1 label {
+  margin-bottom: 3px;
+  margin-top: 2px;
+}
+
+.contents1 select {
+  width: 100%;  
+  padding-left: 2px;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.contents1:last-child {
+  margin-right: 4px;
+}

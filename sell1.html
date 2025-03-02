@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+    <!-- font awesome CDN file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- custom CSS file link -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        /* Side Navbar */
+        .side-navbar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: white;
+            padding-top: 20px;
+            z-index: 1000;
+            color:black;
+            margin-top: 70px;
+        }
+
+        .side-navbar a {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            color:black;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .side-navbar a:hover {
+            background-color: #dbbdbd;
+        }
+
+        .content {
+            margin-left: 10px; /* To leave space for the side navbar */
+            padding: 20px;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            margin-left: 250px;
+            font-size: 20px;
+        }
+
+        .checkbox-container input {
+            margin-right: 10px;
+        }
+
+        .save-btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-left: 800px;
+        }
+
+        .save-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Side Navbar -->
+    <div class="side-navbar">
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#products">Products</a>
+        <a href="#categories">Categories</a>
+        <a href="#review">Review</a>
+        <a href="#blogs">Blogs</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Header section start -->
+        <header class="header">
+            <a href="#" class="logo"><i class="fas fa-shopping-basket"></i>Ruronixz</a>
+            <nav class="navbar">
+                <a href="#home">home</a>
+                <a href="#features">features</a>
+                <a href="#products">products</a>
+                <a href="#categories">categories</a>
+                <a href="#review">review</a>
+                <a href="#blogs">blogs</a>
+            </nav>
+
+            <div class="icons">
+                <div class="fas fa-bars" id="menu-btn"></div>
+                <div class="fas fa-search" id="search-btn"></div>
+                <div class="fas fa-shopping-cart" id="cart-btn"></div>
+                <div class="fas fa-user" id="login-btn"></div>
+            </div>
+
+            <form action="" class="search-form">
+                <input type="search" id="search-box" placeholder="search here...">
+                <label for="search-box" class="fas fa-search"></label>
+            </form>
+
+            <div class="shopping-cart">
+                <div class="box">
+                    <i class="fas fa-trash"></i>
+                    <img src="photos/cart-img-1.png" alt="">
+                    <div class="content">
+                        <h3>Rolling Toy</h3>
+                        <span class="price">$100/-</span>
+                        <span class="quantity">qty : 1</span>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <i class="fas fa-trash"></i>
+                    <img src="photos/cart-img-2.png" alt="">
+                    <div class="content">
+                        <h3>Leather Bag</h3>
+                        <span class="price">$200/-</span>
+                        <span class="quantity">qty : 1</span>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <i class="fas fa-trash"></i>
+                    <img src="photos/cart-img-3.png" alt="">
+                    <div class="content">
+                        <h3>Wooden Chair</h3>
+                        <span class="price">$100/-</span>
+                        <span class="quantity">qty : 1</span>
+                    </div>
+                </div>
+                <div class="total">total : $500/-</div>
+                <a href="#" class="btn">checkout</a>
+            </div>
+
+            <form action="" class="login-form">
+                <h3>login now</h3>
+                <input type="email" placeholder="your email" class="box">
+                <input type="password" placeholder="your password" class="box">
+                <p>forget your password <a href="#">click here</a></p>
+                <p>don't have an account <a href="#">create now</a></p>
+                <input type="submit" value="login now" class="btn">
+            </form>
+        </header>
+        <!-- Header section end -->
+
+        <!-- Product Submission Form -->
+        <h4 class="h1">Sell New Products</h4>
+        <div class="container">
+            <div class="box1">
+                <div class="form-group">
+                    <label for="product-name">Product Name:</label>
+                    <input type="text" id="product-name" name="product-name">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <input type="text" id="description" name="description">
+                </div>
+            </div>
+
+            <div class="box2">
+                <h5>Upload Your Product Image</h5><br>
+                <div class="container2">
+                    <div id="drop-zone1" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <p>Drag and drop your product image here</p>
+                    </div>
+                    <div id="drop-zone2" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <p>Drag and drop your product image here</p>
+                    </div>
+                    <div id="drop-zone3" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <p>Drag and drop your product image here</p>
+                    </div>
+                    <div id="drop-zone4" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <p>Drag and drop your product image here</p>
+                    </div>
+                </div>
+                <input type="file" id="file-input" accept="image/*" onchange="handleFileSelect(event)">
+            </div>
+        </div><br>
+
+        <div class="container3">
+            <div class="box3">
+                <h2>Pricing & Stock</h2>
+                <div class="row">
+                    <div class="contents">
+                        <label for="base-price">Base Price</label>
+                        <input type="text" id="base-price" name="base-price">
+                    </div>
+                    <div class="contents">
+                        <label for="stock">Stock</label>
+                        <input type="text" id="stock" name="stock">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="contents">
+                        <label for="discount">Discount</label>
+                        <input type="text" id="discount" name="discount">
+                    </div>
+                    <div class="contents">
+                        <label for="discount-type">Discount Type</label>
+                        <input type="text" id="discount-type" name="discount-type">
+                    </div>
+                </div>
+            </div>
+
+            <div class="box4">
+                <h2>Category & Variations</h2>
+                <div class="row">
+                    <div class="contents1">
+                        <label for="category">Category</label>
+                        <select id="category" name="category">
+                            <option value="handmade-jewelry">Jewelry</option>
+                            <option value="handcrafted-home-decor">Handcrafted Home Decor</option>
+                            <option value="artisanal-clothing">Artisanal Clothing</option>
+                            <option value="eco-friendly-products">Eco-Friendly Products</option>
+                        </select>
+                    </div>
+                    <div class="contents1">
+                        <label for="size">Size</label>
+                        <select id="size" name="size">
+                            <option value="small">Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="large">Large</option>
+                            <option value="custom">Custom</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="contents1">
+                        <label for="color">Color</label>
+                        <select id="color" name="color">
+                            <option value="red">Red</option>
+                            <option value="blue">Blue</option>
+                            <option value="green">Green</option>
+                            <option value="black">Black</option>
+                            <option value="white">White</option>
+                        </select>
+                    </div>
+                    <div class="contents1">
+                        <label for="pack-option">Pack Option</label>
+                        <select id="pack-option" name="pack-option">
+                            <option value="single">Single</option>
+                            <option value="set-of-2">Set of 2</option>
+                            <option value="set-of-3">Set of 3</option>
+                            <option value="custom-set">Custom Set</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terms and Save Button -->
+        <div class="checkbox-container">
+            <input type="checkbox" id="terms" name="terms">
+            <label for="terms">Accept Terms and Conditions</label>
+            <button class="save-btn">Save</button>
+        </div>
+
+        
+    </div>
+
+    <!-- custom JS file link -->
+    <script src="index.js"></script>
+</body>
+
+</html>
